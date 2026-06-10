@@ -1,134 +1,108 @@
-import images from "../src/assets";
+import { Code2, ExternalLink, LockKeyhole } from "lucide-react";
 
-const Projects = () => {
+const Projects = ({ isDark, t }) => {
+  const sectionClass = isDark
+    ? "bg-slate-950 text-slate-100"
+    : "bg-slate-50 text-slate-950";
+  const mutedText = isDark ? "text-slate-300" : "text-slate-600";
+  const cardClass = isDark
+    ? "border-white/10 bg-slate-900/80 shadow-black/20"
+    : "border-slate-200 bg-white shadow-slate-200/70";
+  const buttonClass = isDark
+    ? "border-white/10 text-slate-200 hover:border-teal-300 hover:text-teal-200"
+    : "border-slate-200 text-slate-700 hover:border-teal-500 hover:text-teal-700";
+  const disabledClass = isDark
+    ? "border-white/10 text-slate-500"
+    : "border-slate-200 text-slate-400";
+
   return (
-    <div
+    <section
       id="projects"
-      name="projects"
-      className="w-full md:h-screen text-gray-300 bg-[#0a192f]"
+      className={`px-4 py-20 sm:px-6 lg:px-8 ${sectionClass}`}
     >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
-          <p className="text-2xl font-bold inline border-b-4 text-gray-300 border-pink-600">
-            Projects
-          </p>
-          <p className="py-6">Check out some of my recent work</p>
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-2xl">
+          <p className="text-sm font-bold uppercase text-teal-500">{t.eyebrow}</p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">{t.title}</h2>
+          <p className={`mt-4 text-base leading-7 ${mutedText}`}>{t.description}</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-50">
-          <div
-            style={{ backgroundImage: `url(${images.Attend})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div h-60 bg-cover bg-center"
-          >
-            <div className="opacity-0 group-hover:opacity-100 duration-300 bg-black/60 w-full h-full flex flex-col justify-center items-center">
-              <span className="text-xl font-bold text-white tracking-wider">
-                Face Recognition Attend
-              </span>
-              <div className="pt-8 text-center">
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${images.Coffe})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div h-60 bg-cover bg-center"
-          >
-            <div className="opacity-0 group-hover:opacity-100 duration-300 bg-black/60 w-full h-full flex flex-col justify-center items-center">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Coffe Shop
-              </span>
-              <div className="pt-8 text-center">
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${images.SereneVisa})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div h-60 bg-cover bg-center"
-          >
-            <div className="opacity-0 group-hover:opacity-100 duration-300 bg-black/60 w-full h-full flex flex-col justify-center items-center">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Serene (Travel agent)
-              </span>
-              <div className="pt-8 text-center">
-                <a href="https://sereneubud.com">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${images.Bakoel})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div h-60 bg-cover bg-center"
-          >
-            <div className="opacity-0 group-hover:opacity-100 duration-300 bg-black/60 w-full h-full flex flex-col justify-center items-center">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Bakoelide
-              </span>
-              <div className="pt-8 text-center">
-                <a href="https://bakoelide.com">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${images.Visa})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div h-60 bg-cover bg-center"
-          >
-            <div className="opacity-0 group-hover:opacity-100 duration-300 bg-black/60 w-full h-full flex flex-col justify-center items-center">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Project Title
-              </span>
-              <div className="pt-8 text-center">
-                <a href="https://myvisa.co.id">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="#">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {t.items.map((project) => {
+            const hasDemo = project.demo && project.demo !== "#";
+            const hasCode = project.code && project.code !== "#";
+
+            return (
+              <article
+                className={`overflow-hidden rounded-lg border shadow-xl transition hover:-translate-y-1 ${cardClass}`}
+                key={project.title}
+              >
+                <div
+                  className={`flex aspect-[16/10] items-center justify-center overflow-hidden ${
+                    isDark ? "bg-slate-950" : "bg-slate-100"
+                  }`}
+                >
+                  <img
+                    alt={project.title}
+                    className={
+                      project.imageFit === "contain"
+                        ? "h-full w-full object-contain p-3"
+                        : "h-full w-full object-cover"
+                    }
+                    src={project.image}
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-sm font-bold text-amber-500">{project.category}</p>
+                  <h3 className="mt-3 text-xl font-bold">{project.title}</h3>
+                  <p className={`mt-3 min-h-20 text-sm leading-7 ${mutedText}`}>
+                    {project.description}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {hasDemo ? (
+                      <a
+                        className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-semibold transition ${buttonClass}`}
+                        href={project.demo}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <ExternalLink size={16} />
+                        {t.demo}
+                      </a>
+                    ) : (
+                      <span
+                        className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-semibold ${disabledClass}`}
+                      >
+                        <LockKeyhole size={16} />
+                        {t.unavailable}
+                      </span>
+                    )}
+                    {hasCode ? (
+                      <a
+                        className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-semibold transition ${buttonClass}`}
+                        href={project.code}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Code2 size={16} />
+                        {t.code}
+                      </a>
+                    ) : (
+                      <span
+                        className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-semibold ${disabledClass}`}
+                      >
+                        <Code2 size={16} />
+                        {t.unavailable}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
